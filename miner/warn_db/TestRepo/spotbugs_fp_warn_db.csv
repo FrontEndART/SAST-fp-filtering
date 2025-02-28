@@ -1,0 +1,3 @@
+,tool,warning_type,warning_msg,commit_sha,repo,filename,positions,filepath,commit_date,label
+0,Spotbugs,PA_PUBLIC_PRIMITIVE_ATTRIBUTE,Primitive field is public,368b17da4c080b6f652673d0f10e16c63f1f2cb4,https://github.com/RustyPincer/TestRepo,Worker.java,"{'start_line': '11', 'start_col': '', 'end_line': '11', 'end_col': ''}",dataset/368b17da4c080b6f652673d0f10e16c63f1f2cb4/src/main/java/my_app/Worker.java,2022-08-25T12:08:40Z,0
+1,Spotbugs,PA_PUBLIC_PRIMITIVE_ATTRIBUTE,Primitive field is public,cf313a918d036d508e6803e9e56bd7ddb4ac4030,https://github.com/RustyPincer/TestRepo,Employee.java,"{'start_line': '13', 'start_col': '', 'end_line': '13', 'end_col': ''}",dataset/cf313a918d036d508e6803e9e56bd7ddb4ac4030/src/main/java/my_app/Employee.java,2022-08-30T11:16:38Z,0

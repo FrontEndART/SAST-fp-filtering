@@ -1,2 +1,0 @@
-https://github.com/RustyPincer/TestRepo.git
-https://github.com/aws-samples/lambda-java8-dynamodb.git

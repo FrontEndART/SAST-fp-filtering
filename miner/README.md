@@ -1,51 +1,67 @@
-# FP Filtering
+# A miner tool to collect actionable and non-actionable warnings from real-life Java projects
 
-## Subprojects
 
-The various subprojects in this repo.
+## Description
 
-### Miner-main
+In this project we have implemented a miner tool in Python in order to collect actionable and non-actionable warnings from Java static code analysis tool reports. We mention that it was used to obtain the the Non-Actionable Static Code Analysis Reports (NASCAR) dataset.
 
-This directory contains the tool we are testing to use for TP generation.
+## Dependencies
 
-#### How to run
+In order to use our miner, you have to install the following softwares:
+- Python 3.13.2 or newer,
+- Java 23 or newer,
+- PMD 7.1.0 or newer,
+- Maven 3.9.9 or newer,
+- Gradle 8.13 or newer,
+- Spotbugs 4.9.1 or newer.
 
-First of all Miner contains python files, so you have to install python, at least version 3.
-Beside python, Miner uses java, maven, Spotbugs and git. Here are the versions you should
-have:
 
-* Java version 21 or above
-* Maven version 3.9.6 or above
-* Spotbugs 4.8.3
-* Git 2 or above 
-* Python 3.8 or above + pip
+## How to Use It
 
-Miner works on Windows and on Linux as well. There is a config file `config_default` which you should copy as `config` then you can set important arguments in `config` before running.
+1. Open a new terminal.
 
-In the root directory, install the required python modules:
+2. Navigate to the base directory of the miner.
 
+3. Give execute permission to all Python scripts except `GitRemoteProgress.py`, `Project.py`, and `Transformations.py`. For this, you can type in
 ```bash
-pip install -r .\requirements.txt
+for script in $(ls *.py | grep -v 'GitRemoteProgress\|Project\|Transformations'); do
+    chmod a+x $script
+done
 ```
 
-Finally, run the miner:
-
+4. Install the required python packages.
 ```bash
-python main.py
+python3 -m pip install docker alive_progress GitPython loguru unidiff pandas pyarrow tabulate
 ```
 
-## External
+5. Run the miner as follows. 
 
-The external resources used in our work.
+- If you have a single git repository (e.g. `https://github.com/user/repo`), then you just type in 
+```bash
+./miner.py --repo-url https://github.com/user/repo --pmd --spotbugs
+```
+to run the full analysis. Note that you can use the usual command line arguments `--since YYYY-MM-DD` or `--until YYYY-MM-DD` if you wish
+to investigate only a subset of commits.
 
-### **[vfdetector](https://github.com/ntgiang71096/vfdetector)**
+- Moreover, you can specify a file containing a list of git repositories separated by new line characters (e.g. `repos_list.txt`). If this the case, then you can run the miner as follows:
+```bash
+./feeder.py --repo-list repo_list.txt --pmd --spotbugs
+```
+You can use the command line arguments `--since YYYY-MM-DD` or `--until YYYY-MM-DD` as before.
 
-Promising vulnerability fix finder tool. Repo: https://github.com/ntgiang71096/VFDetector
+6. Check the collected source files as follows:
+```bash
+./file_checker.py
+```
 
-### [Related work - SOTA](https://docs.google.com/spreadsheets/d/1sPmawghIsYQKMfG4gRUYl8plXxxiZOKWNv_jPXlA4jI/edit?usp=sharing)
+7. Create the `dataset.parquet` database file and the `files` directory:
+```bash
+./create_dataset.py
+```
 
-Google sheet containing the related work we considered.
-
-### [Fixing commits, SA tool benchmarks, quality java repos](https://docs.google.com/spreadsheets/d/1g4YcDP2r0gDnpzm2ti8qRZNTMbEfxtcPuKzeNqPjA7A/edit?usp=sharing)
-
-Google sheet containing all kind of miscellaneous stuff.
+8. Get the different statistics in the following way:
+```bash
+./proj_stats.py
+./pmd_stats.py
+./spotbugs_stats.py
+```

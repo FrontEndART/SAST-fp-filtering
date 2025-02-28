@@ -1,2 +1,0 @@
-GitPython==3.1.43
-psutil==5.9.8

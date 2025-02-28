@@ -1,0 +1,1 @@
+[{"id": "6d514851862c22879aeb29f8db92f134b33be3d2", "message": "Fixing warning and adding a line next to it\n", "patch": "@@ -5,1 +5,3 @@ public class Employee{\n-\tpublic static int AVERAGE_BREAK = 20;\n+\tpublic static final int AVERAGE_BREAK = 20;\n+\tpublic static final int AVERAGE_SALARY = 100;\n+\t"}]
