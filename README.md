@@ -1,6 +1,6 @@
 # FP Filtering
 
-Repository to collect everyting related to FP filtering. The project is related to two tasks within WP3 in the Sec4AI4Sec project, Task 3.1 (miner tool) and Task 3.3 (filter model, to be added later)
+Repository to collect artefacts related to FP filtering. The project is related to two tasks within WP3 in the Sec4AI4Sec project, Task 3.1 (miner tool) and Task 3.3 (filter model, to be added later)
 
 ## Miner
 
