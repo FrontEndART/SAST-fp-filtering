@@ -1,0 +1,3 @@
+https://github.com/aws-samples/lambda-java8-dynamodb.git
+https://github.com/jenkins-docs/simple-java-maven-app
+https://github.com/hossamhuhu/Scientific-Calculator-By-Java-GUI.git

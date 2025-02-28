@@ -1,0 +1,11 @@
+category
+Bad practice (BAD_PRACTICE)
+Correctness (CORRECTNESS)
+Experimental (EXPERIMENTAL)
+Internationalization (I18N)
+Malicious code vulnerability (MALICIOUS_CODE)
+Multithreaded correctness (MT_CORRECTNESS)
+Bogus random noise (NOISE)
+Performance (PERFORMANCE)
+Security (SECURITY)
+Dodgy code (STYLE)
